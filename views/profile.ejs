@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NODE</title>
+
+    <style>
+        body{
+            background: palegreen;
+            color: #333;
+            padding: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+        }
+        h1{
+            font-size: 48px;
+            text-transform: uppercase;
+            letter-spacing: 2px
+        }
+        p{
+            font-size: 16px;
+        }
+        p.small{
+            font-size: 12px;
+        }
+        ul {
+            padding: 0;
+        }
+        ul > li {
+            text-align: center;
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <% include template/navigation.ejs %>
+    <h1>Welcome to <%= person %> profile</h1>
+    <p style="font-style: italic;">"Live is an education. It is learned mostly through what you discover on your own and not through what others tell you."</p>
+    <small>~ Terry Brooks ~</small>
+    <br/>
+    
+    <h2>Additional data</h2>
+    <p class="small"><strong>Full name : </strong><%= data.flName %> | <strong>Age : </strong><%= data.age %> | <strong>Job : </strong><%= data.job %></p>
+    
+    <h2>Hobbies</h2>
+    <ul>
+        <% data.hobbies.forEach(function(item){ %>
+            <li><%= item %></li>
+        <% }) %>
+    </ul>
+</body>
+</html>
